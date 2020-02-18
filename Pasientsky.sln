@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pasientsky.WebApi", "Pasientsky.WebApi\Pasientsky.WebApi.csproj", "{3F8F3D99-7EA7-4D0B-922D-B119893771CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pasientsky.Wpf", "Pasientsky.Wpf\Pasientsky.Wpf.csproj", "{21735075-D8AB-499F-81A3-515C6F877731}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F8F3D99-7EA7-4D0B-922D-B119893771CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8F3D99-7EA7-4D0B-922D-B119893771CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8F3D99-7EA7-4D0B-922D-B119893771CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8F3D99-7EA7-4D0B-922D-B119893771CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21735075-D8AB-499F-81A3-515C6F877731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21735075-D8AB-499F-81A3-515C6F877731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21735075-D8AB-499F-81A3-515C6F877731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21735075-D8AB-499F-81A3-515C6F877731}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C0DD749-B122-4A6B-8D53-0ADECD1D60A0}
+	EndGlobalSection
+EndGlobal
