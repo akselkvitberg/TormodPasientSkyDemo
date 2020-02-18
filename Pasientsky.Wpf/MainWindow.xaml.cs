@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Pasientsky.WebApi.Controllers;
+using Pasientsky.Api.Client;
 
 namespace Pasientsky.Wpf
 {
@@ -26,16 +14,15 @@ namespace Pasientsky.Wpf
     {
         private string _dummy;
         private Patient _selectedPatient;
+        PatientClient pasientClient = new Pasientsky.Api.Client.PatientClient("http://localhost:5000", new HttpClient());
+        LegekontorClient legekontorClient = new LegekontorClient("http://localhost:5000", new HttpClient());
+
 
         public MainWindow()
         {
             InitializeComponent();
 
-            PatientList = new ObservableCollection<Patient>()
-            {
-                new Patient(){Id = 1, FirstName = "Ola", LastName = "Normann"},
-                new Patient(){Id = 2, FirstName = "Kari", LastName = "Knutsdottir"},
-            };
+            PatientList = new ObservableCollection<Patient>();
             DataContext = this;
         }
 
@@ -44,9 +31,30 @@ namespace Pasientsky.Wpf
         public Patient SelectedPatient
         {
             get => _selectedPatient;
-            set { _selectedPatient = value; OnPropertyChanged();}
+            set {
+                _selectedPatient = value; 
+                OnPropertyChanged();
+            }
         }
 
+
+        private async void OnClickLoad(object sender, RoutedEventArgs e)
+        {
+
+            var pasients = await pasientClient.GetAllPatientsAsync();
+
+            foreach (var pasient in pasients)
+            {
+                PatientList.Add(pasient);
+            }
+        }
+
+
+
+
+
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -54,6 +62,5 @@ namespace Pasientsky.Wpf
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }

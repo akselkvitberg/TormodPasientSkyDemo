@@ -40,9 +40,10 @@ namespace Pasientsky.WebApi.Controllers
         }
 
         [HttpPut]
-        public Patient Update(Patient patient)
+        [Route("{id}")]
+        public Patient Update(int id, Patient patient)
         {
-            var original = patientList.FirstOrDefault(x => x.Id == patient.Id);
+            var original = patientList.FirstOrDefault(x => x.Id == id);
             if (original == null)
             {
                 return null;
@@ -55,6 +56,7 @@ namespace Pasientsky.WebApi.Controllers
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public void Delete(int id)
         {
             var patient = patientList.FirstOrDefault(x => x.Id == id);

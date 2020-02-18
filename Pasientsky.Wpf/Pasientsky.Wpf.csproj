@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pasientsky.WebApi\Pasientsky.WebApi.csproj" />
+    <ProjectReference Include="..\Pasientsky.ApiClient\Pasientsky.ApiClient.csproj" />
   </ItemGroup>
 
 </Project>

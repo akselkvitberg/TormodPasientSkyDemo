@@ -1,0 +1,18 @@
+﻿{
+    "runtime": "NetCore31",
+    "defaultVariables": null,
+    "documentGenerator": {
+        "aspNetCoreToOpenApi": {
+            "project": "../Pasientsky.WebApi/Pasientsky.WebApi.csproj",
+            "targetFramework": "netcoreapp3.1"
+        }
+    },
+    "codeGenerators": {
+        "openApiToCSharpClient": {
+            "generateClientClasses": true,
+            "typeAccessModifier": "public", //make your models and client interfaces public
+            "namespace": "Pasientsky.Api.Client", //clients namespace
+            "output": "Client.g.cs"
+        }
+    }
+}

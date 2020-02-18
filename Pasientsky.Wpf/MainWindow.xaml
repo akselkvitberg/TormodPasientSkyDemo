@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Pasientsky.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
+        <Button Content="Load" Click="OnClickLoad"/>
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -43,4 +45,5 @@
         </Grid>
 
     </Grid>
+    </StackPanel>
 </Window>
